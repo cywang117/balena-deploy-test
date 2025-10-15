@@ -6,7 +6,7 @@ on:
 jobs:
   build-and-deploy:
     name: Build and Deploy to balena
-    uses: balena-io-experimental/build-and-deploy-to-balena/build-and-deploy.yml@main
+    uses: balena-io-experimental/build-and-deploy-to-balena/.github/workflows/build-and-deploy.yml@main
     with:
       balena_environment: balena-staging.com
       platforms: linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6,linux/386
