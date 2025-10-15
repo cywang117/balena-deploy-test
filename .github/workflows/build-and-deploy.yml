@@ -6,6 +6,9 @@ on:
 jobs:
   build-and-deploy:
     name: Build and Deploy to balena
+    permissions:
+      contents: read
+      packages: write
     uses: balena-io-experimental/build-and-deploy-to-balena/.github/workflows/build-and-deploy.yml@main
     with:
       balena_environment: balena-staging.com
@@ -16,3 +19,4 @@ jobs:
         "linux/arm/v7": "g_christina_ying_wang/armv7hf-test"
         "linux/arm/v6": "g_christina_ying_wang/rpi-test"
         "linux/386": "g_christina_ying_wang/i386-test"
+    secrets: inherit
