@@ -11,6 +11,7 @@ jobs:
       packages: write
     uses: balena-io-experimental/build-and-deploy-to-balena/.github/workflows/build-and-deploy.yml@main
     with:
+      BALENA_DEPLOY_API_KEY: ${{ secrets.BALENA_DEPLOY_API_KEY }}
       balena_environment: balena-staging.com
       platforms: linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6,linux/386
       fleet_mapping: |
