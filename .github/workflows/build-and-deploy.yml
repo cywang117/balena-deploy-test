@@ -19,4 +19,5 @@ jobs:
         "linux/arm/v7": "g_christina_ying_wang/armv7hf-test"
         "linux/arm/v6": "g_christina_ying_wang/rpi-test"
         "linux/386": "g_christina_ying_wang/i386-test"
-    secrets: inherit
+    secrets:
+      BALENA_DEPLOY_API_KEY: ${{ secrets.BALENA_DEPLOY_API_KEY }}
