@@ -1,0 +1,18 @@
+name: Build and Deploy to balena
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy to balena
+    uses: balena-io-experimental/build-and-deploy-to-balena/build-and-deploy.yml@main
+    with:
+      balena_environment: balena-staging.com
+      platforms: linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6,linux/386
+      fleet_mapping: |
+        "linux/amd64": "g_christina_ying_wang/amd64-test"
+        "linux/arm64": "g_christina_ying_wang/aarch64-test"
+        "linux/arm/v7": "g_christina_ying_wang/armv7hf-test"
+        "linux/arm/v6": "g_christina_ying_wang/rpi-test"
+        "linux/386": "g_christina_ying_wang/i386-test"
