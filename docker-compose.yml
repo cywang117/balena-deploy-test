@@ -1,0 +1,23 @@
+x-platforms: &platforms
+  - linux/amd64
+  - linux/arm64
+  - linux/arm/v7
+  - linux/arm/v6
+  - linux/386
+
+services:
+  node-hello:
+    build:
+      context: ./
+      dockerfile: Dockerfile.node-hello
+      platforms: *platforms
+    image: node-hello
+    stop_signal: SIGKILL
+
+  arch-detector:
+    build:
+      context: ./
+      dockerfile: Dockerfile.arch-detector
+      platforms: *platforms
+    image: arch-detector
+    stop_signal: SIGKILL

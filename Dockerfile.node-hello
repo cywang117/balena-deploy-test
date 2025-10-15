@@ -1,0 +1,16 @@
+ARG NODE="nodejs~=22"
+ARG NPM="npm~=10"
+ARG ALPINE_VERSION="3.21"
+
+###################################################
+# Build the supervisor dependencies
+###################################################
+FROM alpine:${ALPINE_VERSION}
+
+RUN apk add --update --no-cache \
+	$NODE \
+	$NPM
+
+COPY index.js .
+
+CMD ["node", "index.js"]
